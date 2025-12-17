@@ -17,7 +17,7 @@
 
 ## 🔗 External Dependencies
 
-This project uses the **Pico-Ducky framework** by **dbisu**:
+This project uses the **Pico-Ducky framework** by user **dbisu**:
 
 - https://github.com/dbisu/pico-ducky
 
@@ -39,21 +39,30 @@ The goal is **not exploitation**, but:
 
 ---
 
-## 🔴 Red Team Perspective (This Repo)
+## 🔴🗡️ Red Team Perspective (This Repo)
 
 This project simulates:
 
-- A malicious USB device emulating a keyboard (HID)
+- A malicious USB device emulating a keyboard
 - Automated payload delivery to a Windows system
 - A PowerShell-based keystroke logging script
-- Common persistence techniques observed in real-world malware
+- Persistence techniques
 - Outbound data exfiltration
+
+Attack flow:
+
+1. USB device enumerates as a keyboard
+2. Predefined keystrokes execute a PowerShell payload
+3. PowerShell captures keystrokes using Windows APIs
+4. Data is temporarily logged locally
+5. Data is transmitted externally
+6. Persistence ensures execution across reboots
 
 > All techniques are intentionally **well-known** to ensure they are detectable by modern security tooling.
 
 ---
 
-## 🔵 Blue Team Perspective (Companion Project)
+## 🔵🛡️ Blue Team Perspective (Companion Project)
 
 👉 **EDR Repository:**  
 _(Link this once published)_
@@ -65,24 +74,8 @@ The EDR focuses on:
 - Persistence mechanism monitoring
 - Behavioral correlation instead of signature-only detection
 
----
-
-## 🧠 High-Level Attack Flow
-
-1. USB device enumerates as a keyboard (HID)
-2. Predefined keystrokes execute a PowerShell payload
-3. PowerShell captures keystrokes using Windows APIs
-4. Data is temporarily logged locally
-5. Data is transmitted externally (lab-controlled)
-6. Persistence ensures execution across reboots
-
----
-
-## 🛡️ Detection & Defense Notes
-
 Defenders should look for:
 
-- New USB HID devices appearing unexpectedly
 - PowerShell launched with hidden windows
 - PowerShell scripts interacting with `user32.dll`
 - Registry autorun persistence in user context
