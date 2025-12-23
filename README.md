@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Red Team Banner" width="90%" style="border-radius: 8px;">
+  <img src="assets/banner.png" alt="Red Team Banner" width="100%" style="border-radius: 16px;">
 </p>
 
 # USB HID Attack Simulation (Pico-Ducky)
