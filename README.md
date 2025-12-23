@@ -4,8 +4,6 @@
 
 # USB HID Attack Simulation (Pico-Ducky)
 
-### Red Team Tradecraft & Blue Team Detection Research
-
 > ⚠️ **AUTHORIZED USE ONLY**
 >
 > This project is for **educational, research, and authorized security testing** purposes only.
