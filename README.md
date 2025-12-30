@@ -53,9 +53,7 @@ Attack flow:
 
 ## 🔵🛡️ Blue Team Perspective (Companion Project)
 
-👉 **EDR Repository:**  
-_(Link once published)_
-`endpoint-threat-detection-rust`
+👉 **EDR Repository:**  [endpoint-threat-detection-rust](https://github.com/willhudd/endpoint-threat-detection-rust)
 
 The EDR focuses on:
 
