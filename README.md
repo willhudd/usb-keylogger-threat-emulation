@@ -9,7 +9,7 @@
 > This project is for **educational, research, and authorized security testing** purposes only.
 > Do NOT use this project on systems you do not own or do not have explicit written permission to test.
 >
-> This repository is part of a **Red Team vs Blue Team portfolio**, paired with a custom Endpoint Detection & Response (EDR) system designed to detect this attack.
+> This repository is part of a **Red Team vs Blue Team portfolio**, paired with a custom Host-based Intrusion Detection System.
 
 ---
 
@@ -32,7 +32,7 @@ The goal is not exploitation, but:
 
 - Understanding how HID-based attacks work
 - Providing a controlled test case for defensive detection
-- Validating the effectiveness of a custom-built EDR
+- Validating the effectiveness of a custom-built HIDS
 
 ---
 
@@ -53,9 +53,9 @@ Attack flow:
 
 ## 🔵🛡️ Blue Team Perspective (Companion Project)
 
-👉 **EDR Repository:**  [endpoint-threat-detection-rust](https://github.com/willhudd/endpoint-threat-detection-rust)
+👉 **HIDS Repository:**  [endpoint-threat-detection-rust](https://github.com/willhudd/endpoint-threat-detection-rust)
 
-The EDR focuses on:
+The HIDS focuses on:
 
 - PowerShell abuse indicators
 - Behavioral correlation instead of signature-only detection
@@ -65,9 +65,8 @@ Defenders should look for:
 - PowerShell scripts interacting with `user32.dll`
 - Registry autorun persistence in user context
 - Unusual outbound webhook or HTTPS traffic
-- Execution shortly after USB insertion
 
-These indicators are explicitly targeted by the companion EDR.
+These indicators are explicitly targeted by the companion HIDS.
 
 ---
 
